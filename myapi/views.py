@@ -15,7 +15,7 @@ class TaskList(APIView):
    
     def get(self,request):
         date=datetime.now()
-        tasks=Task.objects.filter(date='2020-06-23 17:51:00')
+        tasks=Task.objects.filter(date=date)
         if tasks.exists():
             for url in tasks:          
                 response=requests.get(url)           
